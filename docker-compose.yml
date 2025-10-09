@@ -1,0 +1,21 @@
+version: '2.4'
+
+services:
+  echo1:
+    build: .
+    ports:
+      - "8081:8080"
+    mem_limit: 500m
+    cpus: 1 
+  echo2:
+    build: .
+    ports:
+      - "8082:8080"
+    mem_limit: 500m
+    cpus: 0.7
+  echo3:
+    build: .
+    ports:
+      - "8083:8080"
+    mem_limit: 500m
+    cpus: 0.3
