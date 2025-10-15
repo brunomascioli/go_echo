@@ -30,6 +30,13 @@ func main() {
     }
 }
 
+func fibonacciRecursivo(n int) int {
+	if n <= 1 {
+		return n
+	}
+	return fibonacciRecursivo(n-1) + fibonacciRecursivo(n-2)
+}
+
 func handleConnection(conn net.Conn) {
     log.Println(countRequest)
     countRequest++
@@ -41,6 +48,8 @@ func handleConnection(conn net.Conn) {
         text := scanner.Text()
 
         log.Printf("Received: %s", text)
+        fibonacciRecursivo(30)
+        
         _, err := fmt.Fprintf(conn, "Echo: %s\n", text)
         if err != nil {
             log.Printf("Failed to write to client: %v", err)
