@@ -8,7 +8,7 @@ class TCPSocketUser(User):
     def on_start(self):
         try:
             host = self.environment.host
-            port = 8080 
+            port = 9000 
 
             self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.client.connect((host, port))
