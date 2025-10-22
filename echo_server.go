@@ -7,10 +7,6 @@ import (
 	"net"
 )
 
-var (
-    countRequest int
-)
-
 func main() {
     listener, err := net.Listen("tcp", ":8080")
     if err != nil {
@@ -38,10 +34,7 @@ func fibonacciRecursivo(n int) int {
 }
 
 func handleConnection(conn net.Conn) {
-    log.Println(countRequest)
-    countRequest++
     defer conn.Close()
-    //time.Sleep(500 * time.Millisecond)
     log.Printf("New connection from %s", conn.RemoteAddr())
     scanner := bufio.NewScanner(conn)
     for scanner.Scan() {
