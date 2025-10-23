@@ -1,0 +1,2 @@
+locust==2.42.0
+locust-cloud==1.27.6
